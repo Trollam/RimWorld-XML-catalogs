@@ -2,8 +2,8 @@
 
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
     elementFormDefault="qualified"
-    xmlns:modMetaData="rimworld.catalogs.modMetaData"
-    targetNamespace="rimworld.catalogs.modMetaData">
+    xmlns:modMetaData="rimworld.schemas.modMetaData"
+    targetNamespace="rimworld.schemas.modMetaData">
     <xs:simpleType name="packageIdType">
         <xs:restriction base="xs:string">
             <xs:minLength value="1" />
