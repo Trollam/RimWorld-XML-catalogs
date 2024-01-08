@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    elementFormDefault="qualified"
+    xmlns:modMetaData="rimworld.catalogs.modMetaData"
+    targetNamespace="rimworld.catalogs.modMetaData">
     <xs:simpleType name="packageIdType">
         <xs:restriction base="xs:string">
             <xs:minLength value="1" />
@@ -17,25 +20,25 @@
 
     <xs:complexType name="loadType">
         <xs:sequence>
-            <xs:element name="li" minOccurs="1" maxOccurs="unbounded" type="packageIdType" />
+            <xs:element name="li" minOccurs="1" maxOccurs="unbounded" type="modMetaData:packageIdType" />
         </xs:sequence>
     </xs:complexType>
 
     <xs:element name="ModMetaData">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="packageId" type="packageIdType" />
+                <xs:element name="packageId" type="modMetaData:packageIdType" />
                 <xs:element name="name" type="xs:string" />
                 <xs:element name="shortname" type="xs:string" minOccurs="0" />
                 <xs:element name="author" type="xs:string" />
-                <xs:element name="modVersion" type="versionType" />
+                <xs:element name="modVersion" type="modMetaData:versionType" />
                 <xs:element name="url" type="xs:anyURI" minOccurs="0" />
                 <xs:element name="description" type="xs:string" />
                 <xs:element name="steamAppId" type="xs:unsignedInt" minOccurs="0" />
                 <xs:element name="supportedVersions">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="li" minOccurs="1" maxOccurs="unbounded" type="versionType" />
+                            <xs:element name="li" minOccurs="1" maxOccurs="unbounded" type="modMetaData:versionType" />
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
@@ -55,11 +58,11 @@
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
-                <xs:element name="loadBefore" minOccurs="0" type="loadType" />
-                <xs:element name="loadAfter" minOccurs="0" type="loadType" />
-                <xs:element name="incompatibleWith" minOccurs="0" type="loadType" />
-                <xs:element name="forceLoadBefore" minOccurs="0" type="loadType" />
-                <xs:element name="forceLoadAfter" minOccurs="0" type="loadType" />
+                <xs:element name="loadBefore" minOccurs="0" type="modMetaData:loadType" />
+                <xs:element name="loadAfter" minOccurs="0" type="modMetaData:loadType" />
+                <xs:element name="incompatibleWith" minOccurs="0" type="modMetaData:loadType" />
+                <xs:element name="forceLoadBefore" minOccurs="0" type="modMetaData:loadType" />
+                <xs:element name="forceLoadAfter" minOccurs="0" type="modMetaData:loadType" />
             </xs:sequence>
         </xs:complexType>
     </xs:element>
