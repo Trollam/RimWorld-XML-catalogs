@@ -1,0 +1,8 @@
+{
+    "catalogs": [
+        {
+            "systemId": "ModMetaData",
+            "uri": "catalogs/ModMetaData.xsd"
+        }
+    ]
+}
