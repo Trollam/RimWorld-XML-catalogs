@@ -12,9 +12,9 @@ It's intended to be used when creating mods for RimWorld.
 
 ## Supported XML Nodes
 
-```xml
-<ModMetaData xmlns="rimworld.schemas.modMetaData">
-```
+| Node         | Namespace                    | File                      |
+|--------------|------------------------------|---------------------------|
+| ModMetaData  | rimworld.schemas.modMetaData | ./schemas/ModMetaData.xsd |
 
 ## Contributing
 
