@@ -3,5 +3,5 @@
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
   <uri
     name="rimworld.schemas.modMetaData"
-    uri="./schemas/ModMetaData.xsd" />
+    uri="https://raw.githubusercontent.com/Trollam/RimWorld-XML-catalogs/main/schemas/ModMetaData.xsd" />
 </catalog>
