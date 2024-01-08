@@ -2,7 +2,7 @@
     "catalogs": [
         {
             "systemId": "ModMetaData",
-            "uri": "https://github.com/Trollam/RimWorld-XML-catalogs/blob/main/catalogs/ModMetaData.xsd"
+            "uri": "./catalogs/ModMetaData.xsd"
         }
     ]
 }
