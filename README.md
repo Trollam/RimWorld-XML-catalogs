@@ -15,6 +15,7 @@ It's intended to be used when creating mods for RimWorld.
 | Node         | Namespace                    | File                      |
 |--------------|------------------------------|---------------------------|
 | ModMetaData  | rimworld.schemas.modMetaData | ./schemas/ModMetaData.xsd |
+| LoadFolders  | rimworld.schemas.loadFolders | ./schemas/LoadFolders.xsd |
 
 ## Contributing
 

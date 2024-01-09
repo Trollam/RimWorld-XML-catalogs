@@ -1,7 +1,10 @@
 <?xml version="1.0"?>
-<!DOCTYPE catalog PUBLIC "-//OASIS/DTD Entity Resolution XML Catalog V1.0//EN" "http://www.oasis-open.org/committees/entity/release/1.0/catalog.dtd">
+<!DOCTYPE catalog PUBLIC "-//OASIS/DTD Entity Resolution XML Catalog V1.0//EN" "http://www.oasis-open.org/committees/entity/release/1.1/catalog.dtd">
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
   <uri
     name="rimworld.schemas.modMetaData"
     uri="https://raw.githubusercontent.com/Trollam/RimWorld-XML-catalogs/main/schemas/ModMetaData.xsd" />
+  <uri
+    name="rimworld.schemas.loadFolders"
+    uri="https://raw.githubusercontent.com/Trollam/RimWorld-XML-catalogs/main/schemas/LoadFolders.xsd" />
 </catalog>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  elementFormDefault="qualified"
+  xmlns:rimworldTypes="rimworld.types"
+  targetNamespace="rimworld.types">
+
+  <xs:simpleType name="packageIdType">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="60" />
+      <xs:pattern value="[a-zA-Z0-9]+(\.[a-zA-Z0-9]+)*" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="versionType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="\d+\.\d+" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="loadType">
+    <xs:sequence>
+      <xs:element name="li" minOccurs="1" maxOccurs="unbounded" type="rimworldTypes:packageIdType" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="loadFolderVersionType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="(.+)/([^/]+)" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="loadFoldersVersionType">
+    <xs:sequence>
+      <xs:element name="li" type="xs:string" fixed="/" />
+      <xs:element name="li" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="xs:string">
+              <xs:attribute name="IfModActive" type="rimworldTypes:packageIdType" use="optional" />
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
