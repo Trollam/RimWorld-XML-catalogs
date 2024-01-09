@@ -3,38 +3,60 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
   elementFormDefault="qualified"
   xmlns:rimworldTypes="rimworld.types"
+  xmlns:loadFolders="rimworld.schemas.loadFolders"
   targetNamespace="rimworld.schemas.loadFolders">
 
   <xs:import namespace="rimworld.types"
     schemaLocation="https://raw.githubusercontent.com/Trollam/RimWorld-XML-catalogs/main/types.xsd" />
 
+  <xs:simpleType name="folderType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="(.+)/([^/]+)" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="versionType">
+    <xs:sequence>
+      <xs:element name="li" type="xs:string" fixed="/" />
+      <xs:element name="li" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="loadFolders:folderType">
+              <xs:attribute name="IfModActive" type="rimworldTypes:packageIdType" use="optional" />
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
   <xs:element name="loadFolders">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="v0.1" minOccurs="0" type="rimworldTypes:loadFoldersVersionType" />
-        <xs:element name="v0.2" minOccurs="0" type="rimworldTypes:loadFoldersVersionType" />
-        <xs:element name="v0.3" minOccurs="0" type="rimworldTypes:loadFoldersVersionType" />
-        <xs:element name="v0.4" minOccurs="0" type="rimworldTypes:loadFoldersVersionType" />
-        <xs:element name="v0.5" minOccurs="0" type="rimworldTypes:loadFoldersVersionType" />
-        <xs:element name="v0.6" minOccurs="0" type="rimworldTypes:loadFoldersVersionType" />
-        <xs:element name="v0.7" minOccurs="0" type="rimworldTypes:loadFoldersVersionType" />
-        <xs:element name="v0.8" minOccurs="0" type="rimworldTypes:loadFoldersVersionType" />
-        <xs:element name="v0.9" minOccurs="0" type="rimworldTypes:loadFoldersVersionType" />
-        <xs:element name="v0.10" minOccurs="0" type="rimworldTypes:loadFoldersVersionType" />
-        <xs:element name="v0.11" minOccurs="0" type="rimworldTypes:loadFoldersVersionType" />
-        <xs:element name="v0.12" minOccurs="0" type="rimworldTypes:loadFoldersVersionType" />
-        <xs:element name="v0.13" minOccurs="0" type="rimworldTypes:loadFoldersVersionType" />
-        <xs:element name="v0.14" minOccurs="0" type="rimworldTypes:loadFoldersVersionType" />
-        <xs:element name="v0.15" minOccurs="0" type="rimworldTypes:loadFoldersVersionType" />
-        <xs:element name="v0.16" minOccurs="0" type="rimworldTypes:loadFoldersVersionType" />
-        <xs:element name="v0.17" minOccurs="0" type="rimworldTypes:loadFoldersVersionType" />
-        <xs:element name="v0.18" minOccurs="0" type="rimworldTypes:loadFoldersVersionType" />
-        <xs:element name="v0.19" minOccurs="0" type="rimworldTypes:loadFoldersVersionType" />
-        <xs:element name="v1.0" minOccurs="0" type="rimworldTypes:loadFoldersVersionType" />
-        <xs:element name="v1.1" minOccurs="0" type="rimworldTypes:loadFoldersVersionType" />
-        <xs:element name="v1.2" minOccurs="0" type="rimworldTypes:loadFoldersVersionType" />
-        <xs:element name="v1.3" minOccurs="0" type="rimworldTypes:loadFoldersVersionType" />
-        <xs:element name="v1.4" minOccurs="0" type="rimworldTypes:loadFoldersVersionType" />
+        <xs:element name="v0.1" minOccurs="0" type="loadFolders:versionType" />
+        <xs:element name="v0.2" minOccurs="0" type="loadFolders:versionType" />
+        <xs:element name="v0.3" minOccurs="0" type="loadFolders:versionType" />
+        <xs:element name="v0.4" minOccurs="0" type="loadFolders:versionType" />
+        <xs:element name="v0.5" minOccurs="0" type="loadFolders:versionType" />
+        <xs:element name="v0.6" minOccurs="0" type="loadFolders:versionType" />
+        <xs:element name="v0.7" minOccurs="0" type="loadFolders:versionType" />
+        <xs:element name="v0.8" minOccurs="0" type="loadFolders:versionType" />
+        <xs:element name="v0.9" minOccurs="0" type="loadFolders:versionType" />
+        <xs:element name="v0.10" minOccurs="0" type="loadFolders:versionType" />
+        <xs:element name="v0.11" minOccurs="0" type="loadFolders:versionType" />
+        <xs:element name="v0.12" minOccurs="0" type="loadFolders:versionType" />
+        <xs:element name="v0.13" minOccurs="0" type="loadFolders:versionType" />
+        <xs:element name="v0.14" minOccurs="0" type="loadFolders:versionType" />
+        <xs:element name="v0.15" minOccurs="0" type="loadFolders:versionType" />
+        <xs:element name="v0.16" minOccurs="0" type="loadFolders:versionType" />
+        <xs:element name="v0.17" minOccurs="0" type="loadFolders:versionType" />
+        <xs:element name="v0.18" minOccurs="0" type="loadFolders:versionType" />
+        <xs:element name="v0.19" minOccurs="0" type="loadFolders:versionType" />
+        <xs:element name="v1.0" minOccurs="0" type="loadFolders:versionType" />
+        <xs:element name="v1.1" minOccurs="0" type="loadFolders:versionType" />
+        <xs:element name="v1.2" minOccurs="0" type="loadFolders:versionType" />
+        <xs:element name="v1.3" minOccurs="0" type="loadFolders:versionType" />
+        <xs:element name="v1.4" minOccurs="0" type="loadFolders:versionType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

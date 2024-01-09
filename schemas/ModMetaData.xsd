@@ -3,10 +3,17 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
   elementFormDefault="qualified"
   xmlns:rimworldTypes="rimworld.types"
+  xmlns:modMetaData="rimworld.schemas.modMetaData"
   targetNamespace="rimworld.schemas.modMetaData">
 
   <xs:import namespace="rimworld.types"
     schemaLocation="https://raw.githubusercontent.com/Trollam/RimWorld-XML-catalogs/main/types.xsd" />
+
+  <xs:complexType name="loadType">
+    <xs:sequence>
+      <xs:element name="li" minOccurs="1" maxOccurs="unbounded" type="rimworldTypes:packageIdType" />
+    </xs:sequence>
+  </xs:complexType>
 
   <xs:element name="ModMetaData">
     <xs:complexType>
@@ -42,11 +49,11 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="loadBefore" minOccurs="0" type="rimworldTypes:loadType" />
-        <xs:element name="loadAfter" minOccurs="0" type="rimworldTypes:loadType" />
-        <xs:element name="incompatibleWith" minOccurs="0" type="rimworldTypes:loadType" />
-        <xs:element name="forceLoadBefore" minOccurs="0" type="rimworldTypes:loadType" />
-        <xs:element name="forceLoadAfter" minOccurs="0" type="rimworldTypes:loadType" />
+        <xs:element name="loadBefore" minOccurs="0" type="modMetaData:loadType" />
+        <xs:element name="loadAfter" minOccurs="0" type="modMetaData:loadType" />
+        <xs:element name="incompatibleWith" minOccurs="0" type="modMetaData:loadType" />
+        <xs:element name="forceLoadBefore" minOccurs="0" type="modMetaData:loadType" />
+        <xs:element name="forceLoadAfter" minOccurs="0" type="modMetaData:loadType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

@@ -18,31 +18,4 @@
       <xs:pattern value="\d+\.\d+" />
     </xs:restriction>
   </xs:simpleType>
-
-  <xs:complexType name="loadType">
-    <xs:sequence>
-      <xs:element name="li" minOccurs="1" maxOccurs="unbounded" type="rimworldTypes:packageIdType" />
-    </xs:sequence>
-  </xs:complexType>
-
-  <xs:simpleType name="loadFolderVersionType">
-    <xs:restriction base="xs:string">
-      <xs:pattern value="(.+)/([^/]+)" />
-    </xs:restriction>
-  </xs:simpleType>
-
-  <xs:complexType name="loadFoldersVersionType">
-    <xs:sequence>
-      <xs:element name="li" type="xs:string" fixed="/" />
-      <xs:element name="li" maxOccurs="unbounded">
-        <xs:complexType>
-          <xs:simpleContent>
-            <xs:extension base="xs:string">
-              <xs:attribute name="IfModActive" type="rimworldTypes:packageIdType" use="optional" />
-            </xs:extension>
-          </xs:simpleContent>
-        </xs:complexType>
-      </xs:element>
-    </xs:sequence>
-  </xs:complexType>
 </xs:schema>
